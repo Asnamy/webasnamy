@@ -23,6 +23,9 @@
         <link href="css/vegas.min.css" rel="stylesheet">
 
         <link href="css/tooplate-barista.css" rel="stylesheet">
+
+        <script src="https://www.google.com/recaptcha/enterprise.js?render=6LcNeWIpAAAAAEAjSXWfS0vEKYOck5YJzDAsxcuZ"></script>
+  <!-- Your code -->
 <!--
 
 Tooplate 2137 Barista
@@ -113,6 +116,15 @@ Bootstrap 5 HTML CSS Template
 
                                                         <textarea name="booking-form-message" rows="3" class="form-control" id="booking-form-message" placeholder="Informacion Adicional"></textarea>
                                                     </div>
+
+                                                    <script>
+                                                        function onClick(e) {
+                                                          e.preventDefault();
+                                                          grecaptcha.enterprise.ready(async () => {
+                                                            const token = await grecaptcha.enterprise.execute('6LcNeWIpAAAAAEAjSXWfS0vEKYOck5YJzDAsxcuZ', {action: 'LOGIN'});
+                                                          });
+                                                        }
+                                                      </script>
 
                                                     <div class="col-lg-4 col-md-10 col-8 mx-auto mt-2">
                                                         <button type="submit" class="form-control">Enviar</button>
